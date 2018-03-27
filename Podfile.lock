@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.0)
+  - boost-for-react-native (1.63.0)
   - ChatClient (0.0.1):
     - Moya
     - SQLite.swift
@@ -26,7 +27,13 @@ PODS:
     - CocoaLumberjack/Default
   - CWActionSheet (0.0.7)
   - CWShareView (0.0.2)
+  - DoubleConversion (1.1.5)
+  - Folly (2016.09.26.00):
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
   - FSPagerView (0.7.1)
+  - glog (0.3.4)
   - Hue (3.0.1)
   - Kingfisher (4.6.4)
   - KissXML (5.2.2)
@@ -51,6 +58,36 @@ PODS:
     - RxSwift (~> 4.0)
   - Nimble (7.0.3)
   - Quick (1.2.0)
+  - React/Core (0.54.3):
+    - yoga (= 0.54.3.React)
+  - React/CxxBridge (0.54.3):
+    - Folly (= 2016.09.26.00)
+    - React/Core
+    - React/cxxreact
+  - React/cxxreact (0.54.3):
+    - boost-for-react-native (= 1.63.0)
+    - Folly (= 2016.09.26.00)
+    - React/jschelpers
+    - React/jsinspector
+  - React/DevSupport (0.54.3):
+    - React/Core
+    - React/RCTWebSocket
+  - React/fishhook (0.54.3)
+  - React/jschelpers (0.54.3):
+    - Folly (= 2016.09.26.00)
+    - React/PrivateDatabase
+  - React/jsinspector (0.54.3)
+  - React/PrivateDatabase (0.54.3)
+  - React/RCTBlob (0.54.3):
+    - React/Core
+  - React/RCTNetwork (0.54.3):
+    - React/Core
+  - React/RCTText (0.54.3):
+    - React/Core
+  - React/RCTWebSocket (0.54.3):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
   - Result (3.2.4)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
@@ -76,6 +113,7 @@ PODS:
     - CocoaLumberjack
     - KissXML (~> 5.2.0)
     - libidn (~> 1.33.0)
+  - yoga (0.54.3.React)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -83,7 +121,10 @@ DEPENDENCIES:
   - ChatKit (from `./Module/ChatKit/ChatKit.podspec`)
   - CWActionSheet
   - CWShareView
+  - DoubleConversion (from `./ReactNative/node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Folly (from `./ReactNative/node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - FSPagerView
+  - glog (from `./ReactNative/node_modules/react-native/third-party-podspecs/GLog.podspec`)
   - Hue
   - Kingfisher
   - KVOController
@@ -92,6 +133,12 @@ DEPENDENCIES:
   - Moya/RxSwift
   - Nimble
   - Quick
+  - React/Core (from `./ReactNative/node_modules/react-native`)
+  - React/CxxBridge (from `./ReactNative/node_modules/react-native`)
+  - React/DevSupport (from `./ReactNative/node_modules/react-native`)
+  - React/RCTNetwork (from `./ReactNative/node_modules/react-native`)
+  - React/RCTText (from `./ReactNative/node_modules/react-native`)
+  - React/RCTWebSocket (from `./ReactNative/node_modules/react-native`)
   - RxCocoa
   - RxSwift
   - SnapKit
@@ -103,6 +150,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - TableViewManager (from `./Module/TableViewManager/TableViewManager.podspec`)
   - XMPPFramework (from `https://github.com/robbiehanson/XMPPFramework.git`, branch `master`)
+  - yoga (from `./ReactNative/node_modules/react-native/ReactCommon/yoga`)
   - YYText
 
 EXTERNAL SOURCES:
@@ -110,13 +158,23 @@ EXTERNAL SOURCES:
     :path: ./Module/ChatClient/ChatClient.podspec
   ChatKit:
     :path: ./Module/ChatKit/ChatKit.podspec
+  DoubleConversion:
+    :podspec: ./ReactNative/node_modules/react-native/third-party-podspecs/DoubleConversion.podspec
+  Folly:
+    :podspec: ./ReactNative/node_modules/react-native/third-party-podspecs/Folly.podspec
+  glog:
+    :podspec: ./ReactNative/node_modules/react-native/third-party-podspecs/GLog.podspec
   MomentKit:
     :path: ./Module/MomentKit/MomentKit.podspec
+  React:
+    :path: ./ReactNative/node_modules/react-native
   TableViewManager:
     :path: ./Module/TableViewManager/TableViewManager.podspec
   XMPPFramework:
     :branch: master
     :git: https://github.com/robbiehanson/XMPPFramework.git
+  yoga:
+    :path: ./ReactNative/node_modules/react-native/ReactCommon/yoga
 
 CHECKOUT OPTIONS:
   XMPPFramework:
@@ -125,13 +183,17 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   ChatClient: 65302036dac7401c2fadd2462760676c27da7f51
   ChatKit: 2c87721be43c79bd8753726b85b2a4d7d29c74c1
   CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
   CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
   CWActionSheet: 91390f102ef79ed59713f5b3c5af8fcbfe1e3e76
   CWShareView: a7befa2a75fa1113c587b69b03b48556b488316d
+  DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
+  Folly: 211775e49d8da0ca658aebc8eab89d642935755c
   FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
+  glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   KissXML: 4418f32138aec43797891845d682b00fc8cd4677
@@ -142,6 +204,7 @@ SPEC CHECKSUMS:
   Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  React: c237e42de9c70e5cac6eeb52b4cfd3a0910c1f00
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
@@ -154,8 +217,9 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TableViewManager: d357c47234e09ff858ab7d743b180009ee2a70ff
   XMPPFramework: 967df10e4dc4ba4ca5e04505fd2b2d2fd562d917
+  yoga: a8f784d06c21123849472d3a1b0afaf9d75eb65e
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 495aa62bcfcfa7f42989c277bca086d423bbf880
+PODFILE CHECKSUM: c85f46ce439fd5581186ef655e0adb2ddb17b712
 
 COCOAPODS: 1.4.0

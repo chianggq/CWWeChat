@@ -45,6 +45,9 @@ playground.xcworkspace
 #
 Pods/
 
+# React-Native
+ReactNative/node_modules/
+
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.

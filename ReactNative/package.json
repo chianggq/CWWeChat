@@ -1,0 +1,20 @@
+{
+  "name": "cwwechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "keywords": [
+    "chat",
+    "react-native"
+  ],
+  "author": "chenwei",
+  "license": "MIT",
+  "dependencies": {
+    "react-native": "^0.54.3"
+  }
+}
